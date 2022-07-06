@@ -15,7 +15,6 @@ const Games = db.define('games', {
     genre: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique:true
     },
     status: {
         type: DataTypes.STRING,
