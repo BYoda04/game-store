@@ -73,7 +73,7 @@ const loginItem = catchAsync(async (req, res, next) => {
 	const validPass = await bcrypt.compare(password,user.password);
 
 	if (!validPass) {
-		next(new AppError('Invalid password',404));
+		return next(new AppError('Invalid password',404));
 	};
 
 	const token = jwt.sign({ id:user.id }, process.env.JWT_SIGN, { 
